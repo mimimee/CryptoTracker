@@ -58,4 +58,7 @@ dependencies {
 
     // Debug only
     debugImplementation(libs.bundles.compose.debug)
+
+    //Modules
+    implementation(project(":core-ui"))
 }
