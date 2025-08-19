@@ -25,3 +25,7 @@ keystore.properties
 
 # Generated
 **/generated/
+
+# Keystore
+*.jks
+*.keystore
