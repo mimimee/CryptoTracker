@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "CryptoTracker"
 include(":app")
 include(":core-ui")
+include(":feature-markets")
