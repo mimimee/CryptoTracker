@@ -13,7 +13,7 @@ class MarketsEntry : FeatureEntry {
 
     override fun register(builder: NavGraphBuilder, navController: NavHostController) {
         builder.composable(route) {
-
+            MarketsScreen()
         }
     }
 }

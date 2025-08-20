@@ -4,44 +4,42 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.rememberNavController
+import com.example.cryptotracker.core.ui.nav.FeatureEntry
+import com.example.cryptotracker.feature.markets.MarketsEntry
 import com.example.cryptotracker.ui.theme.CryptoTrackerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContent {
-            CryptoTrackerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
-        }
+        setContent { AppRoot() }
     }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
+fun AppRoot(modifier: Modifier = Modifier) {
+    val navHostController = rememberNavController()
+    val entries: List<FeatureEntry> = listOf(
+        MarketsEntry()
     )
-}
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
     CryptoTrackerTheme {
-        Greeting("Android")
+        Scaffold { paddingValues ->
+            NavHost(
+                navController = navHostController,
+                startDestination = entries.first().route,
+                modifier = Modifier.padding(paddingValues)
+            ) {
+                entries.forEach { entry ->
+                    entry.register(this, navHostController)
+                }
+            }
+        }
     }
 }
