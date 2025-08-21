@@ -1,11 +1,9 @@
-package com.example.cryptotracker.core.ui.nav
+package com.example.cryptotracker.core.navigation
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 
 interface FeatureEntry {
-    val route: String
-
     fun register(
         builder: NavGraphBuilder,
         navController: NavHostController,

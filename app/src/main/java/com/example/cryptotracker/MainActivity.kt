@@ -10,9 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import com.example.cryptotracker.core.ui.nav.FeatureEntry
-import com.example.cryptotracker.feature.coin.CoinEntry
-import com.example.cryptotracker.feature.markets.MarketsEntry
+import com.example.cryptotracker.core.navigation.FeatureEntry
+import com.example.cryptotracker.core.navigation.routes.MarketsRoute
+import com.example.cryptotracker.feature.coin.navigation.CoinEntry
+import com.example.cryptotracker.feature.markets.navigation.MarketsEntry
 import com.example.cryptotracker.ui.theme.CryptoTrackerTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun AppRoot(modifier: Modifier = Modifier) {
+fun AppRoot() {
     val navHostController = rememberNavController()
     val entries: List<FeatureEntry> = listOf(
         MarketsEntry(),
@@ -35,7 +36,7 @@ fun AppRoot(modifier: Modifier = Modifier) {
         Scaffold { paddingValues ->
             NavHost(
                 navController = navHostController,
-                startDestination = "markets",
+                startDestination = MarketsRoute,
                 modifier = Modifier.padding(paddingValues)
             ) {
                 entries.forEach { entry ->
