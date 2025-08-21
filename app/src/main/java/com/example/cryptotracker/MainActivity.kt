@@ -33,7 +33,7 @@ fun AppRoot(modifier: Modifier = Modifier) {
         Scaffold { paddingValues ->
             NavHost(
                 navController = navHostController,
-                startDestination = entries.first().route,
+                startDestination = "markets",
                 modifier = Modifier.padding(paddingValues)
             ) {
                 entries.forEach { entry ->
