@@ -53,5 +53,5 @@ dependencies {
     //Modules
     implementation(project(":core-ui"))
     implementation(project(":feature-markets"))
-
+    implementation(project(":feature-coin"))
 }

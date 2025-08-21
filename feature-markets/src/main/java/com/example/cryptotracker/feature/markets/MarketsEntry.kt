@@ -1,8 +1,5 @@
 package com.example.cryptotracker.feature.markets
 
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
@@ -13,12 +10,11 @@ class MarketsEntry : FeatureEntry {
 
     override fun register(builder: NavGraphBuilder, navController: NavHostController) {
         builder.composable(route) {
-            MarketsScreen()
+            MarketsScreen(
+                onOpenCoin = { id ->
+                    navController.navigate("coin/$id")
+                }
+            )
         }
     }
-}
-
-@Composable
-fun MarketsScreen(modifier: Modifier = Modifier) {
-    Text("Markets Screen")
 }

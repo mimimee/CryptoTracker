@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.example.cryptotracker.core.ui.nav.FeatureEntry
+import com.example.cryptotracker.feature.coin.CoinEntry
 import com.example.cryptotracker.feature.markets.MarketsEntry
 import com.example.cryptotracker.ui.theme.CryptoTrackerTheme
 
@@ -26,7 +27,8 @@ class MainActivity : ComponentActivity() {
 fun AppRoot(modifier: Modifier = Modifier) {
     val navHostController = rememberNavController()
     val entries: List<FeatureEntry> = listOf(
-        MarketsEntry()
+        MarketsEntry(),
+        CoinEntry()
     )
 
     CryptoTrackerTheme {
