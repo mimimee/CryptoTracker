@@ -10,6 +10,11 @@
 !.idea/codeStyles
 !.idea/runConfigurations
 
+# Kotlin compiler / sessions
+.kotlinc/
+.kotlin/
+.kotlin/sessions/
+
 # System files
 *.iml
 .DS_Store
