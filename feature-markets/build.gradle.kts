@@ -30,11 +30,11 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
-
     implementation(libs.androidx.core.ktx)
 
     testImplementation(libs.junit)
 
     //Modules
     implementation(project(":core-ui"))
+    implementation(project(":core-network"))
 }

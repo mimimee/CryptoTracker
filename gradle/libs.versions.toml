@@ -1,24 +1,30 @@
 [versions]
 # Plugins & Build
 agp = "8.9.3"
-kotlin = "2.1.10"
+kotlin = "2.2.10"
 
 # Core
-coreKtx = "1.16.0"
-lifecycleRuntimeKtx = "2.9.2"
+coreKtx = "1.17.0"
+lifecycleRuntimeKtx = "2.9.3"
 activityCompose = "1.10.1"
+coroutines = "1.10.2"
+
 
 # Compose
-composeBom = "2025.08.00"
+composeBom = "2025.08.01"
 
 # Navigation
 navigationCompose = "2.9.3"
+
+# Network
+retrofit = "3.0.0"
+okhttp = "5.1.0"
 
 # Tests
 junit = "4.13.2"
 junitVersion = "1.3.0"
 navigation = "2.9.3"
-jetbrainsKotlinJvm = "2.1.10"
+jetbrainsKotlinJvm = "2.2.10"
 espressoCore = "3.7.0"
 appcompat = "1.7.1"
 material = "1.12.0"
@@ -28,7 +34,10 @@ material = "1.12.0"
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.7.3" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.9.0" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
 
 # Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -44,6 +53,13 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-navigation-common-ktx = { group = "androidx.navigation", name = "navigation-common-ktx", version.ref = "navigation" }
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigation" }
+
+# Network
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-kotlinx-converter = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "retrofit" }
+
+okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
 # Tests
 junit = { group = "junit", name = "junit", version.ref = "junit" }

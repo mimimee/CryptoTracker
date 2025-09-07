@@ -24,8 +24,14 @@ android {
 }
 
 dependencies {
-    testImplementation(libs.junit)
     implementation(libs.kotlinx.serialization.json)
 
-    implementation(project(":core-common"))
+    api(libs.retrofit.core)
+    implementation(libs.retrofit.kotlinx.converter)
+    implementation(libs.okhttp.core)
+    implementation(libs.okhttp.logging)
+
+    testImplementation(libs.junit)
+
+    api(project(":core-common"))
 }

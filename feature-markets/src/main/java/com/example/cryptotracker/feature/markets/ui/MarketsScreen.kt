@@ -48,12 +48,14 @@ fun MarketsScreen(
                 Text(text = "Refresh")
             }
             when (val uiState = state) {
+                MarketUiState.Idle -> {}
                 MarketUiState.Loading -> Text(text = "Loading")
                 is MarketUiState.Error -> Text(text = "Error: ${uiState.message}")
                 is MarketUiState.Success -> MarketList(
                     items = uiState.items,
                     onClick = onOpenCoin
                 )
+
             }
         }
     }
@@ -68,12 +70,14 @@ private fun MarketList(
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(8.dp),
         modifier = modifier
-
     ) {
-        items(items) { marketItem ->
+        items(items = items, key = { it.id }) { marketItem ->
             Text(
                 text = "${marketItem.name} ${marketItem.priceUsd} ${marketItem.change24h}",
-                modifier = Modifier.clickable { onClick(marketItem.id) }
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable { onClick(marketItem.id) }
+                    .padding(vertical = 8.dp)
             )
         }
     }
