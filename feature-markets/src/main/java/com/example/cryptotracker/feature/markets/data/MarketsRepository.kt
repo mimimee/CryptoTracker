@@ -32,6 +32,8 @@ class MarketsRepositoryImpl(
         fold(onSuccess = { Result.success(it) }, onFailure = { Result.failure(mapper(it)) })
 
     companion object {
-        private const val BASE_URL = "https://api.example.com/" // подставим реальный позже
+        private const val BASE_URL = "https://pro-api.coinmarketcap.com/"
     }
 }
+
+val key = "22432e71-6dcb-4458-8477-26062ec8da76"
