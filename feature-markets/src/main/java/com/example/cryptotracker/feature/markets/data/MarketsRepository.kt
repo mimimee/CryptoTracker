@@ -7,6 +7,7 @@ import com.example.cryptotracker.feature.markets.data.api.MarketsApi
 import com.example.cryptotracker.feature.markets.data.mapper.toDomain
 import com.example.cryptotracker.feature.markets.domain.MarketItem
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 interface MarketsRepository {
     suspend fun loadMarkets(): Result<List<MarketItem>>

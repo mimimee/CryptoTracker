@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.example.cryptotracker"
-    compileSdk = 35
+    compileSdk = 36
 
     buildFeatures {
         buildConfig = true
@@ -70,7 +70,7 @@ dependencies {
     //Tests
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
 
     //Debug tools
     debugImplementation(libs.androidx.ui.tooling)

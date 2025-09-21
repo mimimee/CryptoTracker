@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.example.cryptotracker.feature.markets"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 28

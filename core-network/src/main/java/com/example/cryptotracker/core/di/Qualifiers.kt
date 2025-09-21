@@ -1,4 +1,4 @@
-package com.example.cryptotracker.core.common.di
+package com.example.cryptotracker.core.di
 
 import javax.inject.Qualifier
 

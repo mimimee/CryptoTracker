@@ -1,9 +1,9 @@
 package com.example.cryptotracker.di
 
 import com.example.cryptotracker.BuildConfig
-import com.example.cryptotracker.core.common.di.CmcApiKey
-import com.example.cryptotracker.core.common.di.CmcBaseUrl
-import com.example.cryptotracker.core.common.di.IsDebug
+import com.example.cryptotracker.core.di.CmcApiKey
+import com.example.cryptotracker.core.di.CmcBaseUrl
+import com.example.cryptotracker.core.di.IsDebug
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
