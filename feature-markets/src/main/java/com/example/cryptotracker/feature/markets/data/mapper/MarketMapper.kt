@@ -1,11 +1,12 @@
 package com.example.cryptotracker.feature.markets.data.mapper
 
-import com.example.cryptotracker.feature.markets.data.dto.MarketItemDto
+import com.example.cryptotracker.feature.markets.data.dto.CoinDto
 import com.example.cryptotracker.feature.markets.domain.MarketItem
 
-fun MarketItemDto.toDomain() = MarketItem(
-    id = id,
+fun CoinDto.toDomain() = MarketItem(
+    id = id.toString(),
     name = name,
-    priceUsd = priceUsd,
-    change24h = change24h
+    symbol = symbol,
+    priceUsd = quote.usd.price,
+    change24h = quote.usd.percentChange24h
 )

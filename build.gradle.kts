@@ -6,3 +6,9 @@ plugins {
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.jetbrains.kotlin.jvm) apply false
 }
+
+subprojects {
+    configurations.configureEach {
+        exclude("jakarta.inject", module = "jakarta.inject-api")
+    }
+}

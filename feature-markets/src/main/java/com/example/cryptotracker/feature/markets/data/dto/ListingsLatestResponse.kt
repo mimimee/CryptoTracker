@@ -5,8 +5,8 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ListingsLatestResponse(
-    val statusDto: StatusDto? = null,
-    val data: List<CoinDto> = emptyList(),
+    val statusDto: StatusDto,
+    val data: List<CoinDto>,
 )
 
 @Serializable
