@@ -15,7 +15,9 @@ import com.example.cryptotracker.core.navigation.routes.MarketsRoute
 import com.example.cryptotracker.feature.coin.navigation.CoinEntry
 import com.example.cryptotracker.feature.markets.navigation.MarketsEntry
 import com.example.cryptotracker.ui.theme.CryptoTrackerTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -11,7 +11,7 @@ kotlin {
     jvmToolchain(17)
 }
 dependencies {
-    implementation(libs.javax.inject)
+//    implementation(libs.javax.inject)
     implementation(libs.kotlinx.coroutines.core)
     testImplementation(libs.junit)
 }

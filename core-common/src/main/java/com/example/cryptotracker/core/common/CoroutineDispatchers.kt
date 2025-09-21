@@ -1,14 +1,15 @@
 package com.example.cryptotracker.core.common
 
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
 
 interface CoroutineDispatchers {
     val io: CoroutineDispatcher
     val default: CoroutineDispatcher
+    val main: CoroutineDispatcher
 }
 
-object DefaultCoroutineDispatchers : CoroutineDispatchers {
-    override val io = Dispatchers.IO
-    override val default = Dispatchers.Main
-}
+data class AppCoroutineDispatchers(
+    override val io: CoroutineDispatcher,
+    override val default: CoroutineDispatcher,
+    override val main: CoroutineDispatcher,
+) : CoroutineDispatchers

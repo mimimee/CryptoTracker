@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -17,7 +18,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.cryptotracker.feature.markets.domain.MarketItem
 import com.example.cryptotracker.feature.markets.ui.state.MarketUiState
 
@@ -25,7 +26,7 @@ import com.example.cryptotracker.feature.markets.ui.state.MarketUiState
 @Composable
 fun MarketsScreen(
     modifier: Modifier = Modifier,
-    vm: MarketsViewModel = viewModel(),
+    vm: MarketsViewModel = hiltViewModel(),
     onOpenCoin: (String) -> Unit,
 ) {
     val state by vm.state.collectAsState()
@@ -75,7 +76,7 @@ private fun MarketList(
             Text(
                 text = "${marketItem.name} ${marketItem.priceUsd} ${marketItem.change24h}",
                 modifier = Modifier
-                    .fillMaxSize()
+                    .fillMaxWidth()
                     .clickable { onClick(marketItem.id) }
                     .padding(vertical = 8.dp)
             )

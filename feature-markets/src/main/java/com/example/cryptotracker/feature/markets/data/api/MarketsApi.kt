@@ -9,6 +9,6 @@ interface MarketsApi {
     suspend fun getMarkets(
         @Query("start") start: Int = 1,
         @Query("limit") limit: Int = 100,
-        @Query("convert") convert: Int = 100,
+        @Query("convert") convert: String = "USD",
     ): ListingsLatestResponse
 }
