@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -20,7 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.example.cryptotracker.feature.markets.domain.MarketItem
-import com.example.cryptotracker.feature.markets.ui.state.MarketUiState
+import com.example.cryptotracker.feature.markets.ui.state.MarketsUiState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -49,14 +50,13 @@ fun MarketsScreen(
                 Text(text = "Refresh")
             }
             when (val uiState = state) {
-                MarketUiState.Idle -> {}
-                MarketUiState.Loading -> Text(text = "Loading")
-                is MarketUiState.Error -> Text(text = "Error: ${uiState.message}")
-                is MarketUiState.Success -> MarketList(
+                MarketsUiState.Idle -> {}
+                MarketsUiState.Loading -> CircularProgressIndicator()
+                is MarketsUiState.Error -> Text(text = "Error: ${uiState.message}")
+                is MarketsUiState.Success -> MarketList(
                     items = uiState.items,
                     onClick = onOpenCoin
                 )
-
             }
         }
     }

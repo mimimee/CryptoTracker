@@ -1,12 +1,12 @@
-package com.example.cryptotracker.feature.markets.data.dto
+package com.example.cryptotracker.feature.coin.data.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ListingsLatestResponse(
+data class CoinDetailsResponse(
     val status: StatusDto,
-    val data: List<CoinDto>,
+    val data: Map<String, CoinDto>,
 )
 
 @Serializable

@@ -23,9 +23,9 @@ object MarketsApiModule {
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface MarketsMarketsRepositoryModule {
+interface MarketsRepositoryModule {
     @Binds
     @Singleton
-    fun provideMarketsRepo(impl: MarketsRepositoryImpl): MarketsRepository
+    fun bindMarketsRepo(impl: MarketsRepositoryImpl): MarketsRepository
 }
 

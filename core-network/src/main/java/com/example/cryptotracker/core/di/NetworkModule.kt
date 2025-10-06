@@ -57,7 +57,6 @@ object NetworkModule {
                 .request()
                 .newBuilder()
                 .addHeader("X-CMC_PRO_API_KEY", apiKey)
-                .addHeader("Accept-Encoding", "deflate, gzip")
                 .build()
 
             chain.proceed(request)

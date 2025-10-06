@@ -11,8 +11,7 @@ import com.example.cryptotracker.feature.coin.ui.CoinScreen
 class CoinEntry : FeatureEntry {
     override fun register(builder: NavGraphBuilder, navController: NavHostController) {
         builder.composable<CoinRoute> { backStackEntry ->
-            val route = backStackEntry.toRoute<CoinRoute>()
-            CoinScreen(id = route.id, onBack = { navController.popBackStack() })
+            CoinScreen(onBack = { navController.popBackStack() })
         }
     }
 }
